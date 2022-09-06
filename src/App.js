@@ -1,9 +1,18 @@
 import React from 'react';
-import Home from './routes/Home';
 import './App.css';
+import { HashRouter, Route } from 'react-router-dom';
+import About from './routes/About';
+import Home from './routes/Home';
+import Navigation from './components/Navigation';
 
 function App() {
-  return <Home />;
+  return (
+    <HashRouter>
+      <Navigation />
+      <Route path="/" exact component={Home} />
+      <Route path="/about" exact component={About} />
+    </HashRouter>
+  );
 }
 
 export default App;
